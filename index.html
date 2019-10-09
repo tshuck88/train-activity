@@ -48,11 +48,21 @@
                             <table class="table">
                                 <thead>
                                     <tr>
-                                        <th scope="col"><h6>Train Name</h6></th>
-                                        <th scope="col"><h6>Destination</h6></th>
-                                        <th scope="col"><h6>Frequency (min)</h6></th>
-                                        <th scope="col"><h6>Next Arrival</h6></th>
-                                        <th scope="col"><h6>Minutes Away</h6></th>
+                                        <th scope="col">
+                                            <h6>Train Name</h6>
+                                        </th>
+                                        <th scope="col">
+                                            <h6>Destination</h6>
+                                        </th>
+                                        <th scope="col">
+                                            <h6>Frequency (min)</h6>
+                                        </th>
+                                        <th scope="col">
+                                            <h6>Next Arrival</h6>
+                                        </th>
+                                        <th scope="col">
+                                            <h6>Minutes Away</h6>
+                                        </th>
                                     </tr>
                                 </thead>
                                 <tbody id="currentTrainsTable">
@@ -69,25 +79,32 @@
                         <div class="card-body">
                             <form>
                                 <div class="form-group">
-                                    <label for="trainName"><h6>Train Name</h6></label>
-                                    <input type="text" id="trainNameInput" class="form-control"
-                                        placeholder="Seattle">
+                                    <label for="trainName">
+                                        <h6>Train Name</h6>
+                                    </label>
+                                    <input type="text" id="trainNameInput" class="form-control" placeholder="Link Light Rail">
                                 </div>
                                 <div class="form-group">
-                                    <label for="destination"><h6>Destination</h6></label>
-                                    <input type="text" id="destinationInput" class="form-control" placeholder="Bellevue">
+                                    <label for="destination">
+                                        <h6>Destination</h6>
+                                    </label>
+                                    <input type="text" id="destinationInput" class="form-control"
+                                        placeholder="Bellevue">
                                 </div>
                                 <div class="form-group">
-                                    <label for="firstTrainTime"><h6>First Train Time (HH:mm - military time)</h6></label>
+                                    <label for="firstTrainTime">
+                                        <h6>First Train Time (HH:mm - military time)</h6>
+                                    </label>
                                     <input type="text" id="firstTrainTimeInput" class="form-control"
                                         placeholder="03:20">
                                 </div>
                                 <div class="form-group">
-                                    <label for="frequency"><h6>Frequency (min)</h6></label>
+                                    <label for="frequency">
+                                        <h6>Frequency (min)</h6>
+                                    </label>
                                     <input type="text" id="frequencyInput" class="form-control" placeholder="11">
                                 </div>
-                                <button type="submit" id="submitButton"
-                                    class="btn btn-dark">Submit</button>
+                                <button type="submit" id="submitButton" class="btn btn-dark">Submit</button>
                             </form>
                         </div>
                     </div>
@@ -106,6 +123,7 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
             integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
             crossorigin="anonymous"></script>
+        <script src="assets/javascript/app.js"></script>
     </body>
 
 </html>

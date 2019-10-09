@@ -30,4 +30,25 @@ $(document).ready(function () {
         $("#frequencyInput").val("");
     });
 
+    database.ref().on("child_added", function(snapshot){
+        var trainName = snapshot.val().name;
+        var trainDestination = snapshot.val().destination;
+        var firstTrainTime = snapshot.val().start;
+        var trainFrequency = snapshot.val().frequency;
+        var convertedFirstTrain = moment(firstTrainTime, "HH:mm");
+        var timeDiff = moment().diff(moment(convertedFirstTrain), "minutes");
+        var timeRemainder = timeDiff % trainFrequency;
+        var minutesAway = trainFrequency - timeRemainder;
+        var nextTrain = moment().add(minutesAway, "minutes").format("HH:mm")
+        var newRow = $("<tr>").append(
+          $("<td>").text(trainName),
+          $("<td>").text(trainDestination),
+          $("<td>").text(trainFrequency),
+          $("<td>").text(nextTrain),
+          $("<td>").text(minutesAway),
+        );
+        $("#currentTrainsTable").append(newRow)
+
+    });
+
 });
