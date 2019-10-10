@@ -35,11 +35,11 @@ $(document).ready(function () {
         var trainDestination = snapshot.val().destination;
         var firstTrainTime = snapshot.val().start;
         var trainFrequency = snapshot.val().frequency;
-        var convertedFirstTrain = moment(firstTrainTime, "HH:mm");
+        var convertedFirstTrain = moment(firstTrainTime, "HH:mm").subtract(1, "years");
         var timeDiff = moment().diff(moment(convertedFirstTrain), "minutes");
         var timeRemainder = timeDiff % trainFrequency;
         var minutesAway = trainFrequency - timeRemainder;
-        var nextTrain = moment().add(minutesAway, "minutes").format("HH:mm")
+        var nextTrain = moment().add(minutesAway, "minutes").format("HH:mm");
         var newRow = $("<tr>").append(
           $("<td>").text(trainName),
           $("<td>").text(trainDestination),
@@ -47,8 +47,6 @@ $(document).ready(function () {
           $("<td>").text(nextTrain),
           $("<td>").text(minutesAway),
         );
-        $("#currentTrainsTable").append(newRow)
-
+        $("#currentTrainsTable").append(newRow);
     });
-
 });
